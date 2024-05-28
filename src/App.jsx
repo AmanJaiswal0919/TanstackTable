@@ -1,29 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import UserPage from "./components/UserPage";
-//import { useState } from "react";
-
-
 function App() {
-  
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Dashboard />,
-    },
-
-    {
-      path: "/:id",
-      element: <UserPage />,
-    },
-   
-  
-  ]);
-
   return (
-    <RouterProvider router={router}>
-      <Dashboard />
-      </RouterProvider>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/:id" element={<UserPage />} />
+    </Routes>
   );
 }
 
